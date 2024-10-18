@@ -21,7 +21,7 @@ This article reflects the personal experiences and impressions of the author dur
 
 # 2. General Procedure of the DevOps Camp
 
-The DevOps Camp is an unconference where people from the fields of DevOps, administration and other IT-related areas meet.
+The DevOps Camp is an__unconference__ where people from the fields of DevOps, administration and other IT-related areas meet.
 At this event, a pool of topics is presented on each conference day. The agenda of topics will be presented at the start of each conference day.
 
 The topics are presented in sessions of a maximum of 45 minutes. Any form is allowed, such as giving a presentation, demonstrating a live demo, starting a discussion round or the like.
