@@ -2,16 +2,27 @@
 
 This readme is intended to collect my experiences from the [DevOps Camp](https://devops-camp.de/).
 
-This article reflects the personal experiences and impressions of the author from the conference. The presentation does not necessarily reflect the official position or opinion of the organizers of the DevOps Camp.
+This article reflects the personal experiences and impressions of the author during the conference. The presentation does not reflect the official position or opinion of the organizers of the DevOps Camp.
 
-Table of contents:  
+- [1. Experiences from the DevOps Camp 2024](#1-experiences-from-the-devops-camp-2024)
+- [2. General Procedure of the DevOps Camp](#2-general-procedure-of-the-devops-camp)
+- [3. Day 1](#3-day-1)
+  - [3.1. Keycloak](#31-keycloak)
+  - [3.2. AWS Cost Commitments](#32-aws-cost-commitments)
+  - [3.3. K8s Ingress vs. Gateway-API](#33-k8s-ingress-vs-gateway-api)
+  - [3.4. Efficient DevSecOps Workflows with AI](#34-efficient-devsecops-workflows-with-ai)
+  - [3.5. Devenv - Practical Introduction](#35-devenv---practical-introduction)
+- [4. Day 2](#4-day-2)
+  - [4.1. Open Construct Foundation - Why and How?](#41-open-construct-foundation---why-and-how)
+  - [4.2. DevOps Culture Transformation](#42-devops-culture-transformation)
+  - [4.3. Ansible Semaphore](#43-ansible-semaphore)
+  - [4.4. Rapid Prototyping \& API-First in Action](#44-rapid-prototyping--api-first-in-action)
 
-[[_TOC_]]
 
 # 2. General Procedure of the DevOps Camp
 
 The DevOps Camp is an unconference where people from the fields of DevOps, administration and other IT-related areas meet.
-At this event, a pool of topics is presented on each conference day, which the participants can attend.
+At this event, a pool of topics is presented on each conference day. The agenda of topics will be presented at the start of each conference day.
 
 The topics are presented in sessions of a maximum of 45 minutes. Any form is allowed, such as giving a presentation, demonstrating a live demo, starting a discussion round or the like.
 
@@ -23,9 +34,9 @@ Brief introduction and presentation of the current release notes of [Keycloak](h
 
 Keycloak adds authentication to applications and secures services using user federation, strong authentication, user management, fine-grained authorization and more.
 
-In addition to using the tests under [running tests](https://github.com/keycloak/keycloak/blob/main/docs/tests.md) and [writing tests](https://github.com/keycloak/keycloak/blob/main/docs/tests-development.md), so-called [Testcontainers](https://github.com/testcontainers/testcontainers-java) based on Java can be used.
+Despite using the tests under [running tests](https://github.com/keycloak/keycloak/blob/main/docs/tests.md) and [writing tests](https://github.com/keycloak/keycloak/blob/main/docs/tests-development.md), also [Testcontainers](https://github.com/testcontainers/testcontainers-java) based on Java can be used.
 
-Further information could be found after the DevOps Camp under [Spring Boot – Keycloak Integration Testing with Testcontainers](https://www.baeldung.com/spring-boot-keycloak-integration-testing).
+Further information have been found after the DevOps Camp under [Spring Boot – Keycloak Integration Testing with Testcontainers](https://www.baeldung.com/spring-boot-keycloak-integration-testing).
 
 In addition, health checks can be queried via API endpoints [Enabling Keycloak Health checks](https://www.keycloak.org/server/health) and [metrics](https://www.keycloak.org/server/configuration-metrics).
 
@@ -40,7 +51,7 @@ During the presentation, there was an introduction to the [Saving Plans](https:/
 The Saving Plans provide various commitments to keep the costs for AWS products and services low.
 
 A tool for determining the costs is the [AWS Pricing Calculator](https://calculator.aws/#/).
-In addition to the tool, a tip was to cover the baseline of AWS resources through the Saving Plan to get the savings over On-Demand.
+In addition to the tool, a tip was to cover the baseline of AWS resources through Saving Plans, because the discount for the commitment reduces the costs.
 The peaks in resource performance can then be covered by On-Demand consumption.
 
 ## 3.3. K8s Ingress vs. Gateway-API
@@ -51,9 +62,9 @@ The documentation of the live demo is available at [DEVOPS-Camp 2024 -- kubernet
 
 Presentation of possibilities for software generation via AI using the example of the AI assistant [GitLab Duo](https://about.gitlab.com/de-de/gitlab-duo/).
 
-The documentation can be found at [Talk - Efficient DevSecOps Workflows With A Little Help From AI](https://gitlab.com/gitlab-da/use-cases/ai/ai-research/talk-efficient-devsecops-workflows-with-a-little-help-from-ai).
+The documentation can be found under [Talk - Efficient DevSecOps Workflows With A Little Help From AI](https://gitlab.com/gitlab-da/use-cases/ai/ai-research/talk-efficient-devsecops-workflows-with-a-little-help-from-ai).
 
-During the presentation, an example was shown where code in the Perl programming language was to be converted to Python.
+During the presentation, an example was shown where code in the Perl programming language was converted to Python.
 The AI provided an output in Python that also corresponded to the functionality of the Perl program upon closer inspection.
 
 From the audience came the experience that the code still needs to be covered by test suites, as it cannot be guaranteed that the functionality is really the same.
@@ -62,10 +73,10 @@ From the audience came the experience that the code still needs to be covered by
 
 [Devenv](https://devenv.sh/) is a development environment based on the package manager and programming language [Nix](https://nix.dev/manual/nix/2.18/language/index.html).
 
-What was the use case for Devenv?
+What was the use case for the usage of Devenv?
 
-During PHP development in a Docker environment, the execution time on a MacBook was very long, several seconds.
-The main reason was the virtualization overhead of Docker on the MAC.
+During PHP development in a Docker environment, the execution time on a MacBook was very long with several seconds.
+The main reason for the increase was the virtualization overhead of Docker on the MAC.
 
 What was the solution to the problem?
 
@@ -75,7 +86,7 @@ Nix provides a "sandbox" approach to safely build and install packages.
 Advantages of Devenv:
 
 - Packages are built on the respective operating system (Linux, Windows, OS-X, ...) via Nix
-- more precise control over the software environment
+- more control over the software environment
 - better portability, security and scalability
 - You can create Docker images from a Nix package, which become very compact through optimization
 - Nix provides pre-built [packages](https://search.nixos.org/packages) for a variety of frameworks from their official package repositories
@@ -92,8 +103,8 @@ How did the start of the Foundation go?
 
 1. Creation of a [Press Release & FAQ](https://www.open-constructs.org/#community-driven-cdk-construct-library)
 2. Obtaining feedback on the press release from the stakeholders
-3. Creation of an MVP that is then published with Press Release & FAQ
-4. Cyclical releases with maintenance of a Press Release & FAQ for developers and stakeholders to keep the scope of functionality in mind
+3. Creation of a MVP that is then published with Press Release & FAQ
+4. Cyclical releases with maintenance of an internal Press Release & FAQ for developers and stakeholders to keep the scope of functionality in mind
 
 Important points:
 
@@ -108,7 +119,7 @@ In this session, it was discussed what DevOps means for the audience and how it 
 
 Output of the discussion:
 - DevOps (Development and Operations) is a culture that, in simple terms, aims to develop and make software available to customers quickly and easily
-- The use should break down the separation of development and operations teams of an application
+- The usage should break down the separation of development and operations teams of an application
 - DevOps is not really hung on a single engineer or a single team
 - Separating platform, DevOps and development teams is a problematic development
 - Architects play an important role in promoting collaboration between development and operations and supporting the technical implementation
